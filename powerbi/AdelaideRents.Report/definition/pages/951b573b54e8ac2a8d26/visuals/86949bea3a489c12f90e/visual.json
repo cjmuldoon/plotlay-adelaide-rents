@@ -1,0 +1,339 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "86949bea3a489c12f90e",
+  "position": {
+    "x": 40,
+    "y": 128,
+    "z": 1,
+    "height": 882,
+    "width": 1840,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Suburbs"
+                    }
+                  },
+                  "Property": "name"
+                }
+              },
+              "queryRef": "Suburbs.name",
+              "nativeQueryRef": "name",
+              "displayName": "Suburb"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Suburbs"
+                    }
+                  },
+                  "Property": "bonds_2015_all"
+                }
+              },
+              "queryRef": "Suburbs.bonds_2015_all",
+              "nativeQueryRef": "bonds_2015_all",
+              "displayName": "Bonds 2015"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Suburbs"
+                    }
+                  },
+                  "Property": "rent_2015_all"
+                }
+              },
+              "queryRef": "Suburbs.rent_2015_all",
+              "nativeQueryRef": "rent_2015_all",
+              "displayName": "Typical rent 2015"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Suburbs"
+                    }
+                  },
+                  "Property": "bonds_2026_all"
+                }
+              },
+              "queryRef": "Suburbs.bonds_2026_all",
+              "nativeQueryRef": "bonds_2026_all",
+              "displayName": "Bonds, year to Jun 2026"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Suburbs"
+                    }
+                  },
+                  "Property": "rent_2026_all"
+                }
+              },
+              "queryRef": "Suburbs.rent_2026_all",
+              "nativeQueryRef": "rent_2026_all",
+              "displayName": "Typical rent, year to Jun 2026"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Suburbs"
+                    }
+                  },
+                  "Property": "change_pct_all"
+                }
+              },
+              "queryRef": "Suburbs.change_pct_all",
+              "nativeQueryRef": "change_pct_all",
+              "displayName": "Rise (%)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Suburbs"
+                    }
+                  },
+                  "Property": "change_pct_houses"
+                }
+              },
+              "queryRef": "Suburbs.change_pct_houses",
+              "nativeQueryRef": "change_pct_houses",
+              "displayName": "House rise (%)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Suburbs"
+                    }
+                  },
+                  "Property": "change_pct_units"
+                }
+              },
+              "queryRef": "Suburbs.change_pct_units",
+              "nativeQueryRef": "change_pct_units",
+              "displayName": "Unit rise (%)"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Suburbs"
+                  }
+                },
+                "Property": "name"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Suburbs'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI Semibold'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "273.7D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Suburbs.name"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "145.9D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Suburbs.bonds_2015_all"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "227.2D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Suburbs.rent_2015_all"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "285.3D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Suburbs.bonds_2026_all"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "378.2D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Suburbs.rent_2026_all"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "122.7D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Suburbs.change_pct_all"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "192.4D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Suburbs.change_pct_houses"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "180.8D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Suburbs.change_pct_units"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,81 @@
+table Metro
+	lineageTag: 3282d437-bde3-9061-2023-c5237be0fa6d
+
+	measure Houses = AVERAGE ( Metro[rent_houses] )
+		formatString: $#,0
+		lineageTag: 1a44a5a2-ba66-ead6-8741-a34fc1f0db43
+
+	measure 'Flats and units' = AVERAGE ( Metro[rent_units] )
+		formatString: $#,0
+		lineageTag: 528c477b-0c83-cf69-e859-bb51da131754
+
+	/// The middle of the four quarters of 2015
+	measure 'Typical rent 2015' = MEDIANX ( FILTER ( Metro, Metro[quarter] IN {"2015-03", "2015-06", "2015-09", "2015-12"} ), Metro[rent_all] )
+		formatString: $#,0
+		lineageTag: f7c2dc72-6585-285b-96f4-44934c2ab62c
+
+	/// The middle of the four quarters to June 2026
+	measure 'Typical rent 2026' = MEDIANX ( FILTER ( Metro, Metro[quarter] IN {"2025-09", "2025-12", "2026-03", "2026-06"} ), Metro[rent_all] )
+		formatString: $#,0
+		lineageTag: b75e241e-d18e-2f04-00cf-e3c1338d210a
+
+	measure 'Greater Adelaide rise' = DIVIDE ( [Typical rent 2026], [Typical rent 2015] ) - 1
+		formatString: 0%
+		lineageTag: 248f2ec8-34d9-443c-693e-2faeb1ee54d7
+
+	column quarter
+		dataType: string
+		lineageTag: c54af11b-096d-e175-bdff-bce583839e69
+		summarizeBy: none
+		sourceColumn: quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column rent_all
+		dataType: double
+		formatString: $#,0
+		lineageTag: b4c03bd9-a6bd-382f-0b0d-9a4136ac428c
+		summarizeBy: none
+		sourceColumn: rent_all
+
+		annotation SummarizationSetBy = Automatic
+
+	column rent_houses
+		dataType: double
+		formatString: $#,0
+		lineageTag: d7a7103f-a6cd-e88f-8185-1faeafe2731b
+		summarizeBy: none
+		sourceColumn: rent_houses
+
+		annotation SummarizationSetBy = Automatic
+
+	column rent_units
+		dataType: double
+		formatString: $#,0
+		lineageTag: 22643a86-97be-ea8a-0590-8af6d8510f6f
+		summarizeBy: none
+		sourceColumn: rent_units
+
+		annotation SummarizationSetBy = Automatic
+
+	column bonds_all
+		dataType: double
+		formatString: #,0
+		lineageTag: a95a7d00-6e6f-9bb3-ed65-957d3d194aad
+		summarizeBy: none
+		sourceColumn: bonds_all
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Metro = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(GetFile("tables/metro.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Kept = Table.SelectColumns(Promoted, {"quarter", "rent_all", "rent_houses", "rent_units", "bonds_all"}),
+				    Typed = Table.TransformColumnTypes(Kept, {{"quarter", type text}, {"rent_all", type number}, {"rent_houses", type number}, {"rent_units", type number}, {"bonds_all", type number}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

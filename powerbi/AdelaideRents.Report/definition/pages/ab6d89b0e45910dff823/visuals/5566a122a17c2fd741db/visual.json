@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "5566a122a17c2fd741db",
+  "position": {
+    "x": 40,
+    "y": 1020,
+    "z": 99,
+    "height": 48,
+    "width": 1840,
+    "tabOrder": 99
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Private Rent Report (March 2013 to June 2026), SA Housing Trust, from Consumer and Business Services bond data: Data.SA, CC BY 4.0. Suburbs: ABS ASGS Edition 3, CC BY 4.0, matched by name in Plotlay. New bonds only. Made with Plotlay (getplotlay.com).",
+                    "textStyle": {
+                      "fontSize": "9pt",
+                      "color": "#5b6573",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

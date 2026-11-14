@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "a298667dab5bd8bce532",
+  "displayName": "Quarter by quarter",
+  "displayOption": "FitToPage",
+  "height": 1080,
+  "width": 1920
+}

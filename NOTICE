@@ -1,0 +1,48 @@
+How far have Adelaide rents risen, suburb by suburb?
+Copyright 2026 Craig Muldoon. Made with Plotlay (https://www.getplotlay.com).
+
+This repository contains code, data we made, and data from the sources below.
+
+CODE
+  The notebook and the Power BI project (its Power Query, DAX and report files) are licensed under the MIT licence
+  (LICENSE).
+
+DATA WE MADE
+  The tables in data/tables/ (each suburb's quarterly medians, the typical rents of 2015 and the year to June 2026 and
+  the change, Greater Adelaide by quarter, the name matches, the left-out batches), the suburb shapes in
+  data/geometry/ and the visuals are licensed under Creative Commons Attribution 4.0 International (LICENSE-DATA).
+  Please credit: "Adelaide rents: Plotlay (getplotlay.com), from SA Housing Trust and ABS data". They are made from
+  the sources below, whose credits also apply.
+
+UPSTREAM SOURCES
+
+  Private Rent Report (quarterly, March 2013 to June 2026), South Australian Housing Trust, from the Rental Bond Data
+  Set of the Tenancies Branch, Office of Consumer and Business Services. Data.SA, licensed under Creative Commons
+  Attribution 4.0 International (CC BY 4.0), https://data.sa.gov.au/data/dataset/private-rent-report
+    Changes: each report's suburb sheet read into one table (quarter, suburb, flats and units, houses and all
+    dwellings: bonds lodged and median weekly rent); the December 2014 report, which covers July to December 2014,
+    left out; the suburb names matched to ABS Suburbs and Localities; Greater Adelaide only in the derived tables;
+    one-off batches left out; typical rents of 12-month windows worked out as the middle of four quarterly medians.
+
+  Australian Bureau of Statistics, Australian Statistical Geography Standard (ASGS) Edition 3: Suburbs and Localities,
+  Statistical Areas Level 2 and Greater Capital City Statistical Areas, 2021. Based on ABS data, licensed under
+  CC BY 4.0. Simplified and converted by Plotlay.
+  Australian Bureau of Statistics, 2021 Census of Population and Housing, General Community Profile (persons and
+  dwellings by suburb). Based on ABS data, CC BY 4.0. ABS data used with permission from the Australian Bureau of
+  Statistics (www.abs.gov.au).
+
+  Base map in the Plotlay project and the app screenshots: Plotlay Quiet, made from OpenStreetMap data
+  (c) OpenStreetMap contributors, Open Database License (ODbL). It is a picture behind the data only: no data in this
+  repository is taken from OpenStreetMap.
+
+POWER BI MAP CONTEXT
+  The Shape Map in powerbi/ draws South Australia's local government areas round the suburbs: ABS ASGS Edition 3 (2021),
+  CC BY 4.0, simplified. The sea is the map background where no land is drawn.
+
+NOT INCLUDED
+  Nothing in data/ is derived from OpenStreetMap, and no imagery was traced. Nothing here implies endorsement by the
+  South Australian Housing Trust, Consumer and Business Services or the Australian Bureau of Statistics.
+
+THIRD-PARTY SOFTWARE
+  The notebook uses pandas, GeoPandas, Shapely, pyproj and Matplotlib (installed from requirements.txt, each under its
+  own licence). Fonts in the visuals: IBM Plex Sans and IBM Plex Sans Condensed, SIL Open Font License 1.1.

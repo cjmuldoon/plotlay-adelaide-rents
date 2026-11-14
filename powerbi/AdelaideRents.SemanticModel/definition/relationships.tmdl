@@ -1,0 +1,3 @@
+relationship 1a47e4ce-1bc2-09e6-f192-202ff58bd95a
+	fromColumn: Quarters.code
+	toColumn: Suburbs.code
